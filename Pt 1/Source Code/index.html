@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Import External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Import Icon -->
+    <link rel="shortcut icon" href="cog.png" type="image/x-icon">
+
+    <title>Admin Panel</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-container">
+                <h1>Admin Panel</h1>
+                <button class="logout">Logout</button>
+            </div>
+        </header>
+
+        <!-- Main -->
+        <div class="main">
+            <!-- Sidebar -->
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="#">Mahasiswa</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Content -->
+            <div class="content">
+                <h1 class="content-text-h1">Data Users</h1>
+                <button id="btn-tambah">Tambah User</button>
+                <table>
+
+                    <!-- Tabel Header -->
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama</th>
+                            <th>NIM</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <!-- Menampilkan data dari localStorage -->
+                    <tbody id="user-list">
+                         <!-- Tampilan akan muncul apabila user menambahkan data -->
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            &copy; 2024 Udinus
+        </footer>
+
+        <!-- Modal Tambah -->
+        <div id="modal-tambah" class="modal-overlay">
+            <div class="modal">
+                <h2>Tambah User</h2>
+                <form>
+                    <div class="form-group-add">
+                        <label class="form-label" for="name">Name</label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+                    <div class="form-group-add">
+                        <label class="form-label" for="nim">NIM</label>
+                        <input type="text" name="nim" id="nim" required>
+                    </div>
+                    <div>
+                        <button type="button" id="btn-simpan" class="btn-simpan">Simpan</button>
+                        <button type="button" id="btn-batal" class="btn-batal">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal Edit -->
+        <div id="modal-edit" class="modal-overlay">
+            <div class="modal">
+                <h2>Edit User</h2>
+                <form>
+                    <div class="form-group-add">
+                        <label class="form-label" for="edit-name">Name</label>
+                        <input type="text" name="edit-name" id="edit-name" required>
+                    </div>
+                    <div class="form-group-add">
+                        <label class="form-label" for="edit-nim">NIM</label>
+                        <input type="text" name="edit-nim" id="edit-nim" required>
+                    </div>
+                    <div>
+                        <button type="button" id="btn-update" class="btn-update">Update</button>
+                        <button type="button" id="btn-batal-edit" class="btn-batal">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal Hapus -->
+        <div id="modal-hapus" class="modal-overlay">
+            <div class="modal">
+                <h2 >Konfirmasi Penghapusan</h2>
+                <p class="modal-h2">Apakah kamu yakin mau delete user ini?</p>
+                <div>
+                    <button type="button" id="btn-hapus-confirm" class="btn-hapus-confirm">Oke</button>
+                    <button type="button" id="btn-batal-cancel" class="btn-batal">Batal</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pop Up -->
+        <div id="popup-message" class="modal-overlay" style="display: none;">
+            <div class="modal">
+                <p class="text-popup">User berhasil dihapus!</p>
+                <button class="btn">Oke</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- Import External JavaScript -->
+    <script src="main.js"></script>
+</body>
+
+</html>
